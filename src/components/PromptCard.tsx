@@ -1,12 +1,13 @@
-import { Copy, Bookmark, MessageCircle, Plus, User } from "lucide-react";
+
+import { Copy, Bookmark, MessageCircle, Plus, User, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
 
 interface PromptCardProps {
-  id: string;
+  id: number;
   title: string;
-  prompt: string;
+  content: string;
   author: string;
   authorAvatar?: string;
   tags: string[];
@@ -14,19 +15,21 @@ interface PromptCardProps {
   likes: number;
   comments: number;
   copies: number;
+  timeAgo: string;
   isBookmarked?: boolean;
   isLiked?: boolean;
 }
 
 const PromptCard = ({ 
   title, 
-  prompt, 
+  content, 
   author, 
   tags, 
   category, 
   likes, 
   comments, 
   copies,
+  timeAgo,
   isBookmarked = false,
   isLiked = false 
 }: PromptCardProps) => {
@@ -36,7 +39,7 @@ const PromptCard = ({
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(prompt);
+    await navigator.clipboard.writeText(content);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -47,7 +50,7 @@ const PromptCard = ({
   };
 
   return (
-    <div className="prompt-card group">
+    <div className="glass-card p-6 mb-6 transition-all duration-300 hover:shadow-glow hover:scale-[1.02] max-w-2xl mx-auto">
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-3">
@@ -56,12 +59,15 @@ const PromptCard = ({
           </div>
           <div>
             <h3 className="font-semibold text-foreground">{author}</h3>
-            <Badge 
-              variant="secondary" 
-              className="text-xs bg-glass-medium text-primary"
-            >
-              {category}
-            </Badge>
+            <div className="flex items-center space-x-2">
+              <Badge 
+                variant="secondary" 
+                className="text-xs bg-glass-medium text-primary"
+              >
+                {category}
+              </Badge>
+              <span className="text-xs text-muted-foreground">{timeAgo}</span>
+            </div>
           </div>
         </div>
         
@@ -69,7 +75,7 @@ const PromptCard = ({
           variant="ghost"
           size="sm"
           onClick={() => setBookmarked(!bookmarked)}
-          className={`opacity-0 group-hover:opacity-100 transition-opacity ${
+          className={`opacity-70 hover:opacity-100 transition-opacity ${
             bookmarked ? 'text-accent' : 'text-muted-foreground'
           }`}
         >
@@ -84,10 +90,9 @@ const PromptCard = ({
 
       {/* Prompt Preview */}
       <div className="bg-glass-subtle border border-glass-border rounded-lg p-4 mb-4 relative overflow-hidden">
-        <p className="text-foreground/80 text-sm leading-relaxed line-clamp-4">
-          {prompt}
+        <p className="text-foreground/80 text-sm leading-relaxed line-clamp-3">
+          {content}
         </p>
-        <div className="absolute inset-0 bg-gradient-to-t from-glass-medium to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
       </div>
 
       {/* Tags */}
@@ -112,7 +117,7 @@ const PromptCard = ({
               liked ? 'text-accent' : ''
             }`}
           >
-            <span className={`w-4 h-4 rounded-full ${liked ? 'bg-accent' : 'bg-glass-border'}`} />
+            <Heart className={`w-4 h-4 ${liked ? 'fill-current' : ''}`} />
             <span>{likeCount}</span>
           </button>
           
