@@ -1,8 +1,28 @@
+
 import { ArrowDown, Zap, Users, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 import heroImage from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const animatedWords = [
+    "Prompts",
+    "Innovation", 
+    "Creativity",
+    "Intelligence",
+    "Solutions",
+    "Ideas"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % animatedWords.length);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const stats = [
     { label: "Active Prompts", value: "50K+", icon: Zap },
     { label: "Community Members", value: "25K+", icon: Users },
@@ -34,7 +54,16 @@ const HeroSection = () => {
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
             <span className="gradient-text">The Future of</span>
             <br />
-            <span className="text-foreground">AI Prompts</span>
+            <span className="text-foreground">AI </span>
+            <span 
+              className="text-accent transition-all duration-500 ease-in-out inline-block transform"
+              key={currentWordIndex}
+              style={{
+                animation: 'fade-in-up 0.5s ease-out forwards'
+              }}
+            >
+              {animatedWords[currentWordIndex]}
+            </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
