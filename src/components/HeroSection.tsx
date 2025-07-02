@@ -7,7 +7,7 @@ import heroImage from "@/assets/hero-bg.jpg";
 const HeroSection = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const animatedWords = [
-    "Prompts",
+    "AI Prompts",
     "Innovation", 
     "Creativity",
     "Intelligence",
@@ -43,6 +43,16 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-background/80 z-10" />
       
+      {/* Logo Watermark - Bottom Right */}
+      <div className="absolute bottom-8 right-8 z-15 opacity-10">
+        <img 
+          src="/lovable-uploads/ebf12e77-6e0a-4068-94be-f4339f1e3341.png" 
+          alt="ThePromptSpace Logo" 
+          className="w-24 h-24 animate-spin-slow"
+          style={{ animation: 'float 8s ease-in-out infinite' }}
+        />
+      </div>
+      
       {/* Floating Elements */}
       <div className="absolute top-20 left-20 w-20 h-20 bg-primary/20 rounded-full blur-xl float-animation" />
       <div className="absolute top-40 right-32 w-32 h-32 bg-accent/20 rounded-full blur-xl float-animation" style={{ animationDelay: '2s' }} />
@@ -54,7 +64,6 @@ const HeroSection = () => {
           <h1 className="text-6xl md:text-8xl font-bold mb-6">
             <span className="gradient-text">The Future of</span>
             <br />
-            <span className="text-foreground">AI </span>
             <span 
               className="text-accent transition-all duration-500 ease-in-out inline-block transform"
               key={currentWordIndex}
