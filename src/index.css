@@ -147,6 +147,43 @@
     transform: translateY(-2px);
   }
 
+  /* Interactive Wave Background */
+  .interactive-wave-bg {
+    position: relative;
+    transition: var(--transition-smooth);
+    animation: wave-float 8s ease-in-out infinite;
+  }
+
+  .interactive-wave-bg:hover {
+    animation: wave-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes wave-float {
+    0%, 100% { 
+      transform: translateY(0px) scale(1);
+      filter: blur(1px) brightness(1);
+    }
+    50% { 
+      transform: translateY(-5px) scale(1.01);
+      filter: blur(0.8px) brightness(1.1);
+    }
+  }
+
+  @keyframes wave-pulse {
+    0%, 100% { 
+      transform: translateY(0px) scale(1);
+      filter: blur(1px) brightness(1);
+    }
+    25% { 
+      transform: translateY(-3px) scale(1.02);
+      filter: blur(0.5px) brightness(1.2);
+    }
+    75% { 
+      transform: translateY(-8px) scale(1.01);
+      filter: blur(0.8px) brightness(1.1);
+    }
+  }
+
   /* AI-themed Gradients */
   .gradient-primary {
     background: var(--gradient-primary);
@@ -232,5 +269,13 @@
   .prompt-card:hover {
     background: linear-gradient(135deg, hsl(220 15% 15% / 0.9), hsl(220 15% 18% / 0.7));
     box-shadow: var(--shadow-medium), 0 0 30px hsl(200 100% 60% / 0.2);
+  }
+
+  /* Line Clamp Utility */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
