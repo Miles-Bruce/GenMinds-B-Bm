@@ -23,12 +23,6 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const stats = [
-    { label: "Active Prompts", value: "50K+", icon: Zap },
-    { label: "Community Members", value: "25K+", icon: Users },
-    { label: "Daily Interactions", value: "100K+", icon: TrendingUp },
-  ];
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -97,32 +91,6 @@ const HeroSection = () => {
               Join Community
             </Button>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
-            {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div 
-                  key={stat.label} 
-                  className="glass-card p-6 text-center fade-in-up"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <Icon className="w-8 h-8 text-primary mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-col items-center animate-bounce">
-          <span className="text-sm text-muted-foreground mb-2">Scroll to explore</span>
-          <ArrowDown className="w-6 h-6 text-primary" />
         </div>
       </div>
     </section>
