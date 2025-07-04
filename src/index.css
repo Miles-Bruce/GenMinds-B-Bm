@@ -278,4 +278,28 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
+
+  /* Enhanced Gradient Animation */
+  @keyframes gradient-shift {
+    0%, 100% { 
+      background: linear-gradient(135deg, hsl(280 60% 60%), hsl(320 70% 70%));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    25% { 
+      background: linear-gradient(135deg, hsl(300 70% 65%), hsl(280 60% 60%));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    50% { 
+      background: linear-gradient(135deg, hsl(320 70% 70%), hsl(340 80% 75%));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    75% { 
+      background: linear-gradient(135deg, hsl(340 80% 75%), hsl(300 70% 65%));
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+  }
 }

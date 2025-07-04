@@ -20,23 +20,23 @@ const Navigation = () => {
                 style={{ filter: 'drop-shadow(0 0 10px rgba(59, 130, 246, 0.3))' }}
               />
             </div>
-            <span className="text-xl font-bold gradient-text hidden sm:block">
+            <span className="text-xl font-sora font-bold gradient-text hidden sm:block hover:scale-105 transition-transform">
               ThePromptSpace
             </span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-inter font-medium hover:scale-105 transition-all">
               Explore
             </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-inter font-medium hover:scale-105 transition-all">
               Community
             </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-inter font-medium hover:scale-105 transition-all">
               Create
             </a>
-            <a href="#" className="text-foreground hover:text-primary transition-colors">
+            <a href="#" className="text-foreground hover:text-primary transition-colors font-inter font-medium hover:scale-105 transition-all">
               About
             </a>
           </div>
@@ -51,7 +51,7 @@ const Navigation = () => {
               <Bell className="w-5 h-5" />
             </Button>
 
-            <Button variant="outline" className="hidden sm:flex">
+            <Button variant="outline" className="hidden sm:flex font-inter font-medium hover:scale-105 transition-all">
               <User className="w-4 h-4 mr-2" />
               Sign In
             </Button>

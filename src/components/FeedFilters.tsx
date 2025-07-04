@@ -9,23 +9,23 @@ const FeedFilters = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filters = [
-    { id: "trending", label: "Trending", icon: TrendingUp },
-    { id: "recent", label: "Recent", icon: Clock },
-    { id: "top", label: "Top Rated", icon: Star },
-    { id: "featured", label: "Featured", icon: Zap },
+    { id: "trending", label: "🔥 Trending", icon: TrendingUp },
+    { id: "recent", label: "🕒 Recent", icon: Clock },
+    { id: "top", label: "⭐ Top Rated", icon: Star },
+    { id: "featured", label: "⚡ Featured", icon: Zap },
   ];
 
   const categories = [
     "all", "creative-writing", "coding", "marketing", "productivity", 
-    "analysis", "education", "research", "business", "art"
+    "analysis", "education", "research", "business", "art", "design"
   ];
 
   return (
-    <div className="sticky top-24 z-40 glass-card border-b border-glass-border/20 mb-8">
-      <div className="container mx-auto px-6 py-4">
+    <div className="sticky top-20 z-40 glass-card border-b border-glass-border/20 mb-6 backdrop-blur-xl">
+      <div className="container mx-auto px-4 md:px-6 py-4">
         {/* Main Filters */}
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-2">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-4">
+          <div className="flex flex-wrap items-center gap-2">
             {filters.map((filter) => {
               const Icon = filter.icon;
               return (
@@ -34,11 +34,11 @@ const FeedFilters = () => {
                   variant={activeFilter === filter.id ? "default" : "ghost"}
                   size="sm"
                   onClick={() => setActiveFilter(filter.id)}
-                  className={
+                  className={`font-inter font-medium transition-all duration-200 ${
                     activeFilter === filter.id
-                      ? "gradient-primary text-primary-foreground"
-                      : "text-foreground hover:bg-glass-medium"
-                  }
+                      ? "gradient-primary text-primary-foreground scale-105"
+                      : "text-foreground hover:bg-glass-medium hover:scale-105"
+                  }`}
                 >
                   <Icon className="w-4 h-4 mr-2" />
                   {filter.label}
@@ -50,7 +50,7 @@ const FeedFilters = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="text-foreground hover:bg-glass-medium"
+            className="text-foreground hover:bg-glass-medium hover:scale-105 transition-all duration-200 font-inter"
           >
             <Filter className="w-4 h-4 mr-2" />
             More Filters
@@ -63,14 +63,14 @@ const FeedFilters = () => {
             <Badge
               key={category}
               variant={activeCategory === category ? "default" : "outline"}
-              className={`cursor-pointer transition-all duration-200 ${
+              className={`cursor-pointer transition-all duration-200 hover:scale-105 font-inter ${
                 activeCategory === category
-                  ? "bg-accent text-accent-foreground"
-                  : "bg-glass-subtle border-glass-border text-muted-foreground hover:bg-glass-medium"
+                  ? "bg-accent text-accent-foreground scale-105"
+                  : "bg-glass-subtle border-glass-border text-muted-foreground hover:bg-glass-medium hover:text-accent"
               }`}
               onClick={() => setActiveCategory(category)}
             >
-              {category.replace("-", " ")}
+              #{category.replace("-", "")}
             </Badge>
           ))}
         </div>
