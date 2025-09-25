@@ -5,6 +5,7 @@ import BuildingFuture from "@/components/BuildingFuture";
 import FounderNote from "@/components/FounderNote";
 import FeedFilters from "@/components/FeedFilters";
 import PromptCard from "@/components/PromptCard";
+import CTASection from "@/components/CTASection";
 import { Button } from "@/components/ui/button";
 
 const Index = () => {
@@ -128,6 +129,8 @@ const Index = () => {
             </div>
           </div>
         </section>
+        
+        <CTASection />
       </main>
     </div>
   );
