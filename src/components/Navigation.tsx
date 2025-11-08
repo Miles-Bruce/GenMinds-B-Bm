@@ -1,10 +1,11 @@
-
 import { useState } from "react";
 import { Menu, X, Search, Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-glass-medium backdrop-blur-xl border-b border-glass-border">
@@ -51,7 +52,11 @@ const Navigation = () => {
               <Bell className="w-5 h-5" />
             </Button>
 
-            <Button variant="outline" className="hidden sm:flex font-inter font-medium hover:scale-105 transition-all">
+            <Button 
+              variant="outline" 
+              className="hidden sm:flex font-inter font-medium hover:scale-105 transition-all"
+              onClick={() => navigate('/signin')}
+            >
               <User className="w-4 h-4 mr-2" />
               Sign In
             </Button>
@@ -85,7 +90,11 @@ const Navigation = () => {
                 About
               </a>
               <div className="pt-2 border-t border-glass-border">
-                <Button variant="outline" className="w-full">
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => navigate('/signin')}
+                >
                   <User className="w-4 h-4 mr-2" />
                   Sign In
                 </Button>

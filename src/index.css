@@ -302,4 +302,19 @@
       background-clip: text;
     }
   }
+
+  /* Background Gradient Animation */
+  .animate-gradient-shift {
+    background-size: 200% 200%;
+    animation: bg-gradient-shift 8s ease infinite;
+  }
+
+  @keyframes bg-gradient-shift {
+    0%, 100% { 
+      background-position: 0% 50%;
+    }
+    50% { 
+      background-position: 100% 50%;
+    }
+  }
 }
