@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Globe } from "lucide-react";
+import EarlyAdopterBanner from "./EarlyAdopterBanner";
 
 const HeroSection = () => {
   const scrollToSection = (id: string) => {
@@ -35,6 +36,8 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
             Join early creators shaping how prompts are owned, licensed, and protected across regions.
           </p>
+          
+          <EarlyAdopterBanner />
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Button 
