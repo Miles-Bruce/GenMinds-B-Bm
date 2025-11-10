@@ -1,51 +1,47 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Wrench, Globe } from "lucide-react";
+import { CheckCircle, Construction, Clock } from "lucide-react";
 
 const RoadmapSection = () => {
   const columns = [
     {
-      title: "✅ Live Now",
+      title: "Live Now",
       icon: CheckCircle,
       items: [
-        "Browse & save prompts",
-        "Build your profile",
-        "Join community"
+        "Prompt creation & sharing",
+        "Profile setup",
+        "Community access"
       ],
       color: "text-green-500"
     },
     {
-      title: "🚧 Coming Q1 2026",
-      icon: Wrench,
+      title: "In Progress",
+      icon: Construction,
       items: [
-        "Licensing system",
-        "Payment integration",
+        "GEO engine rollout",
+        "Prompt analytics dashboard",
         "Creator verification"
       ],
       color: "text-yellow-500"
     },
     {
-      title: "🌍 Coming Q2 2026",
-      icon: Globe,
+      title: "Coming Soon",
+      icon: Clock,
       items: [
-        "GEO licensing",
-        "Ownership verification",
-        "Business API"
+        "Licensing & payments",
+        "Team collaboration tools",
+        "Marketplace insights"
       ],
-      color: "text-primary"
+      color: "text-blue-500"
     }
   ];
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <section id="roadmap" className="py-20 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <div className="mb-16 fade-in-up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
-            What's Live, What's Coming
+            Roadmap — What's live and coming
           </h2>
         </div>
 
@@ -75,13 +71,15 @@ const RoadmapSection = () => {
           })}
         </div>
 
-        <Button 
-          size="lg"
-          onClick={() => scrollToSection('early-access')}
-          className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-6 text-lg hover:opacity-90 transition-all duration-300 shadow-glow hover:scale-105 font-semibold"
-        >
-          Join the Early Access Program
-        </Button>
+        <Link to="/signup">
+          <Button 
+            size="lg"
+            variant="outline"
+            className="text-lg px-8 py-6 hover:scale-105 transition-all duration-300 font-semibold"
+          >
+            Join Early Access
+          </Button>
+        </Link>
       </div>
     </section>
   );

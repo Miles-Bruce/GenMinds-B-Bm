@@ -1,43 +1,57 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import WhyBuiltSection from "@/components/WhyBuiltSection";
+import QuickLinks from "@/components/QuickLinks";
+import ExpandableQA from "@/components/ExpandableQA";
 import GEOSystemSection from "@/components/GEOSystemSection";
 import RoadmapSection from "@/components/RoadmapSection";
-import VisionSection from "@/components/VisionSection";
+import FeedbackForm from "@/components/FeedbackForm";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 
 const Index = () => {
+  const questions = [
+    {
+      q: "Why does ThePromptSpace exist?",
+      a: "To create infrastructure so prompts become verifiable digital assets — discoverable, attributable, and license-ready."
+    },
+    {
+      q: "What is GEO (General Engine Optimization)?",
+      a: "An AI engine that optimizes prompt discoverability, ranks prompts by performance signals, and improves relevance across searches and categories."
+    },
+    {
+      q: "How will creators earn?",
+      a: "Today: exposure and community. Soon: licensing, royalties, and direct sales through integrated payment flows."
+    },
+    {
+      q: "When will payments & licensing launch?",
+      a: "Planned Q1–Q2 2026. Early access members get priority on beta features and payouts."
+    },
+    {
+      q: "How do I join a community?",
+      a: "Click 'Join Communities' above to explore groups or create your own and invite collaborators."
+    },
+    {
+      q: "Is my prompt ownership protected?",
+      a: "We're building provenance & verification features into the roadmap. Sign up to help shape how this works."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       
       <main>
         <HeroSection />
-        <WhyBuiltSection />
+        <QuickLinks />
+        <ExpandableQA 
+          labelCollapsed="Why we built ThePromptSpace ▽"
+          labelExpanded="Why we built ThePromptSpace △"
+          intro="Tap any question to reveal a short answer. Ask your own question at the bottom."
+          questions={questions}
+          initialVisible={3}
+        />
         <GEOSystemSection />
         <RoadmapSection />
-        <VisionSection />
-        
-        {/* Early Access Section */}
-        <section id="early-access" className="py-20 px-6">
-          <div className="max-w-2xl mx-auto text-center">
-            <div className="rounded-2xl bg-card/50 backdrop-blur-sm border border-border/20 p-8 shadow-xl">
-              <h2 className="text-3xl font-bold mb-4 text-foreground">
-                Join Early Access
-              </h2>
-              <p className="text-muted-foreground mb-6">
-                Be among the first 1,000 creators to shape the future of prompt licensing.
-              </p>
-              <Button 
-                size="lg"
-                className="bg-gradient-to-r from-primary to-secondary text-white px-8 py-6 text-lg hover:opacity-90 transition-all duration-300 shadow-glow hover:scale-105 font-semibold"
-              >
-                Get Early Access →
-              </Button>
-            </div>
-          </div>
-        </section>
+        <FeedbackForm />
       </main>
       
       <Footer />
