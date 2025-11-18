@@ -91,6 +91,9 @@ GenMinds transforms AI development from ad-hoc experimentation into a structured
 GenMinds is built on a cloud-native, scalable, fully serverless architecture.
 
 Architecture Diagram (upload your PNG here)
+
+<img width="1024" height="1024" alt="genminds_architecture_diagram" src="https://github.com/user-attachments/assets/d93dfb63-17b5-4583-b9ae-135657f8f895" />
+
 Recommended components:
 
 Frontend (React + TS + Tailwind + shadcn)
@@ -116,7 +119,7 @@ Embedding vector similarity for drift detection
 
 BigQuery-powered analytics for enterprise reporting
 
-5. Key Features (Concise for Judges)
+5. Key Features
 Assets
 
 Central hub for all intelligence assets with versioning, metadata, semantic search, and structured storage.
