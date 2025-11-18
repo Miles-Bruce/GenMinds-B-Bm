@@ -5,7 +5,7 @@ GenMinds is the platform for organizing, evaluating, and governing the intellige
 
 1. Elevator Pitch
 
-Modern AI systems depend on hidden “intelligence assets”—prompts, instructions, workflows, personas—that determine how models behave.
+Modern AI systems depend on hidden “intelligence assets”—prompts, instructions, workflows, personas that determine how models behave.
 Today, these assets are scattered, unversioned, and unevaluated, leading to inconsistent outputs and unreliable AI systems.
 
 GenMinds brings order to this chaos.
@@ -222,7 +222,6 @@ Node.js backend
 
 For inquiries or collaboration:
 Navakishor Sarma (Founder)
-navakishorsarma2001@gmail.com
-Email: navakishorsarma123@gmail.com
+Email: navakishorsarma2001@gmail.com
 
 Project: GenMinds
