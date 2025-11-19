@@ -1,147 +1,201 @@
-# GenMinds - Intelligence Asset Management Platform
+# GenMinds - Enterprise Intelligence Asset Management Platform
 
-## Project Description
+GenMinds is an enterprise-grade AI intelligence asset management platform designed to help organizations manage, version, evaluate, and license intelligence assets at scale.
 
-GenMinds is an AI-powered intelligence asset management platform designed for managing, versioning, evaluating, and licensing intelligence assets. This platform enables organizations to efficiently manage AI intelligence assets including prompts, templates, workflows, and personas with AI-powered semantic search and evaluation capabilities.
+## What is GenMinds?
 
-## Core Functionality for Intelligence Asset Management
+GenMinds is a comprehensive platform for:
+- **Managing Intelligence Assets** - Create and manage prompts, templates, workflows, and personas
+- **Versioning & Change Tracking** - Track all changes and versions of intelligence assets
+- **AI-Powered Evaluation** - Use machine learning to evaluate and score asset quality
+- **Licensing Management** - Manage intellectual property and licensing for AI assets
+- **Semantic Search** - Find assets using AI-powered semantic understanding
 
-### Asset Management
-- Create, read, update, delete intelligence assets
-- Track asset versions and changes
-- Manage metadata for intelligence assets
-- Support for multiple asset types (prompts, templates, workflows, personas)
+## GenMinds Goals & Objectives
 
-### AI-Powered Features
-- Semantic search using Google Gemini AI embeddings
-- Asset evaluation and quality scoring
-- Intelligent asset recommendations
+1. **Centralized Management** - Single platform to manage all intelligence assets
+2. **Quality Assurance** - Evaluate and score assets for quality and relevance
+3. **Version Control** - Track every change and iteration of assets
+4. **Intelligent Discovery** - Use AI embeddings for smart semantic search
+5. **Scalability** - Handle enterprise-scale asset libraries
 
-### Versioning & Licensing
-- Complete version control for assets
-- Track asset modifications over time
-- Licensing management for intelligence assets
+## GenMinds Architecture
+```
+GenMinds Platform
+│
+├── Frontend Application (React)
+│   ├── Asset Dashboard - View and manage assets
+│   ├── Asset Editor - Create/edit intelligence assets
+│   ├── Search Interface - Semantic search powered by AI
+│   └── Analytics - Track usage and performance
+│
+├── Backend API (Node.js/Express)
+│   ├── Asset Management Service - CRUD operations
+│   ├── AI Search Service - Gemini embeddings
+│   ├── Evaluation Service - Quality scoring
+│   └── Analytics Service - BigQuery logging
+│
+└── Infrastructure (Google Cloud)
+    ├── Firestore - Asset storage
+    ├── Gemini AI - Embeddings & search
+    └── BigQuery - Analytics database
+```
 
-### Analytics & Monitoring
-- Real-time analytics logging via BigQuery
-- Asset usage tracking
+## GenMinds Features
+
+### 1. Intelligence Asset Management
+- Create new intelligence assets (prompts, templates, workflows, personas)
+- Edit and update existing assets
+- Delete and archive assets
+- Full CRUD operations via REST API
+
+### 2. AI-Powered Semantic Search
+- Powered by Google Gemini AI embeddings
+- Search assets by meaning, not just keywords
+- Intelligent asset discovery and recommendations
+
+### 3. Asset Evaluation System
+- Automated quality scoring
+- Relevance evaluation
 - Performance metrics
+- Version comparison
 
-## Repository Structure
+### 4. Versioning & Change Tracking
+- Complete version history
+- Track who changed what and when
+- Rollback to previous versions
+- Change annotations
+
+### 5. Analytics & Insights
+- Real-time usage tracking
+- Asset performance metrics
+- Search analytics
+- User engagement tracking
+
+## GenMinds API
+
+### Asset Management Endpoints
+```
+GET    /api/assets              - List all intelligence assets
+POST   /api/assets              - Create new intelligence asset
+GET    /api/assets/:id          - Get specific asset details
+PUT    /api/assets/:id          - Update intelligence asset
+DELETE /api/assets/:id          - Delete intelligence asset
+```
+
+### AI-Powered Search
+```
+POST   /api/search              - Semantic search using Gemini AI
+```
+
+### Asset Evaluation
+```
+POST   /api/assets/:id/evaluate - Evaluate asset quality
+GET    /api/analytics           - Get analytics data
+```
+
+## GenMinds Data Model
+
+### Intelligence Asset Schema
+Each asset in GenMinds contains:
+```json
+{
+  "id": "unique identifier",
+  "title": "asset name",
+  "description": "detailed description",
+  "category": "prompt | template | workflow | persona",
+  "tags": ["relevant", "keywords"],
+  "source": "asset origin",
+  "riskLevel": "low | medium | high",
+  "version": "version number",
+  "license": "licensing info",
+  "evaluationScore": "quality score 0-100",
+  "embedding": "AI embedding vector",
+  "createdAt": "creation timestamp",
+  "updatedAt": "last modification timestamp"
+}
+```
+
+## GenMinds Technology Stack
+
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| Frontend | React 18, TypeScript, Tailwind CSS | Intelligence asset UI |
+| Backend | Node.js, Express | API for asset management |
+| AI/ML | Google Gemini API | Embeddings & semantic search |
+| Database | Google Firestore | Intelligence asset storage |
+| Analytics | Google BigQuery | Usage tracking |
+| Deployment | Google App Engine | Cloud hosting |
+
+## GenMinds Repository Structure
 ```
 GenMinds-B-Bm/
-├── README.md                                    # Project documentation
-├── GenMinds-B-Bm/                              # Frontend (React)
-│   ├── src/components/
-│   │   ├── Dashboard.tsx                       # Analytics dashboard
-│   │   ├── Assets.tsx                          # Asset management UI
-│   │   ├── CreateAsset.tsx                     # Asset creation form
-│   │   └── Analytics.tsx                       # Analytics visualization
-│   ├── src/lib/api.ts                          # API integration
+├── README.md                           # GenMinds documentation
+├── GenMinds-B-Bm/                     # Frontend application
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Dashboard.tsx           # Asset dashboard
+│   │   │   ├── Assets.tsx              # Asset management
+│   │   │   ├── CreateAsset.tsx         # Asset creation form
+│   │   │   └── Analytics.tsx           # Analytics view
+│   │   ├── lib/
+│   │   │   └── api.ts                  # GenMinds API client
+│   │   └── App.tsx
 │   └── package.json
 │
-└── genminds-backend/                           # Backend API (Node.js/Express)
-    ├── server.js                               # Express server
-    ├── app.yaml                                # App Engine config
+└── genminds-backend/                  # GenMinds Backend API
+    ├── server.js                       # Express server
+    ├── app.yaml                        # App Engine config
     └── package.json
 ```
 
-## Technology Stack
-
-- **Frontend**: React 18, TypeScript, Tailwind CSS
-- **Backend**: Node.js, Express
-- **AI/ML**: Google Gemini API (embeddings, semantic search)
-- **Database**: Google Firestore
-- **Analytics**: Google BigQuery
-- **Deployment**: Google App Engine
-- **Version Control**: Git/GitHub
-
-## API Endpoints for Intelligence Asset Management
-
-### Asset CRUD Operations
-- `GET /api/assets` - List all intelligence assets
-- `POST /api/assets` - Create new intelligence asset
-- `GET /api/assets/:id` - Get specific asset details
-- `PUT /api/assets/:id` - Update asset
-- `DELETE /api/assets/:id` - Delete asset
-
-### AI-Powered Search
-- `POST /api/search` - Semantic search using Gemini embeddings
-
-### Asset Evaluation
-- `POST /api/assets/:id/evaluate` - Evaluate asset quality and relevance
-
-### Analytics
-- `GET /api/analytics` - Get asset analytics and metrics
-
-## Live Deployment
+## GenMinds Live Deployment
 
 - **Frontend**: https://trans-proposal-441718-c9.ew.r.appspot.com
 - **Backend API**: https://api-backend-dot-trans-proposal-441718-c9.ew.r.appspot.com
 
-## Key Features
-
-1. **Intelligence Asset Management** - Comprehensive CRUD for managing AI assets
-2. **Semantic Search** - AI-powered search using Gemini embeddings
-3. **Versioning** - Track changes and versions of assets
-4. **Evaluation** - Quality scoring and relevance evaluation
-5. **Analytics** - Real-time usage tracking and metrics
-6. **Licensing** - Asset licensing and rights management
-
-## Installation & Development
+## GenMinds Installation
 ```bash
-# Clone repository
+# Clone GenMinds repository
 git clone https://github.com/Miles-Bruce/GenMinds-B-Bm.git
 cd GenMinds-B-Bm
 
-# Backend setup
+# Setup GenMinds Backend
 cd genminds-backend
 npm install
 npm run dev
 
-# Frontend setup (new terminal)
+# Setup GenMinds Frontend (new terminal)
 cd GenMinds-B-Bm
 npm install
 npm run dev
 ```
 
-## Data Models
+## GenMinds Project Goals
 
-### Intelligence Asset Schema
-```json
-{
-  "id": "string",
-  "title": "string",
-  "description": "string",
-  "category": "prompt|template|workflow|persona",
-  "tags": ["string"],
-  "source": "string",
-  "riskLevel": "low|medium|high",
-  "evaluationScore": "number",
-  "version": "number",
-  "license": "string",
-  "createdAt": "timestamp",
-  "updatedAt": "timestamp",
-  "embedding": ["number"]
-}
-```
+1. ✅ **Intelligent Asset Management** - Manage AI-generated and AI-related assets
+2. ✅ **Automated Evaluation** - Score and evaluate asset quality
+3. ✅ **Enterprise Versioning** - Track all asset changes and versions
+4. ✅ **AI-Powered Discovery** - Smart semantic search using embeddings
+5. ✅ **Scalable Architecture** - Handle large-scale asset libraries
+6. ✅ **Cloud-Native** - Deployed on Google Cloud Platform
 
-## Status
+## GenMinds Status
 
-**Version**: 1.0.0 (Production Ready)
+**Version**: 1.0.0
 
 - ✅ Intelligence asset CRUD operations
-- ✅ AI-powered semantic search with Gemini
+- ✅ Gemini AI-powered semantic search
 - ✅ Asset evaluation system
-- ✅ Versioning and change tracking
+- ✅ Change versioning
 - ✅ Analytics dashboard
 - ✅ Cloud deployment
-- 🔄 Advanced licensing features (planned)
+- 🔄 Advanced licensing (planned)
 
 ## License
 
 Proprietary - All rights reserved
 
-## Repository
+---
 
-https://github.com/Miles-Bruce/GenMinds-B-Bm
+**GenMinds: Manage Intelligence Assets with AI**
