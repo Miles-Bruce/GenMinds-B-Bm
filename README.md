@@ -1,82 +1,147 @@
-# GenMinds - Intelligence Asset Platform
+# GenMinds - Intelligence Asset Management Platform
 
-A sophisticated, cloud-native platform for managing, searching, and evaluating intelligence assets using AI-powered semantic search.
+## Project Description
 
-**Live Platform:** https://trans-proposal-441718-c9.ew.r.appspot.com
+GenMinds is an AI-powered intelligence asset management platform designed for managing, versioning, evaluating, and licensing intelligence assets. This platform enables organizations to efficiently manage AI intelligence assets including prompts, templates, workflows, and personas with AI-powered semantic search and evaluation capabilities.
 
-## Project Overview
+## Core Functionality for Intelligence Asset Management
 
-GenMinds is an enterprise-grade intelligence asset management platform that enables organizations to create, manage, search, and evaluate intelligence assets using AI-powered semantic search and analytics.
+### Asset Management
+- Create, read, update, delete intelligence assets
+- Track asset versions and changes
+- Manage metadata for intelligence assets
+- Support for multiple asset types (prompts, templates, workflows, personas)
 
-## Implementation Details
+### AI-Powered Features
+- Semantic search using Google Gemini AI embeddings
+- Asset evaluation and quality scoring
+- Intelligent asset recommendations
 
-### Architecture
-- **Frontend:** React 18 with TypeScript, Tailwind CSS, Vite
-- **Backend:** Node.js with Express.js
-- **Database:** Google Firestore
-- **AI/Search:** Google Gemini API for embeddings
-- **Analytics:** Google BigQuery
-- **Deployment:** Google App Engine
+### Versioning & Licensing
+- Complete version control for assets
+- Track asset modifications over time
+- Licensing management for intelligence assets
 
-### Repository Structure
-- `GenMinds-B-Bm/` - Frontend React application
-  - `src/components/` - Dashboard, Assets, Analytics, CreateAsset components
-  - `src/lib/api.ts` - API client for backend integration
-  - `package.json` - Frontend dependencies
-  
-- `genminds-backend/` - Backend API (Node.js/Express)
-  - `src/routes/` - Asset CRUD and search endpoints
-  - `src/services/` - Firestore, Gemini, BigQuery services
-  - `app.yaml` - App Engine deployment configuration
+### Analytics & Monitoring
+- Real-time analytics logging via BigQuery
+- Asset usage tracking
+- Performance metrics
 
-### Key Features
-- Asset Management - Full CRUD operations
-- Semantic Search - AI-powered search using Gemini embeddings
-- Analytics - Real-time event logging to BigQuery
-- Asset Evaluation - Quality scoring and ratings
-- Cloud-Native - Deployed on Google App Engine
+## Repository Structure
+```
+GenMinds-B-Bm/
+├── README.md                                    # Project documentation
+├── GenMinds-B-Bm/                              # Frontend (React)
+│   ├── src/components/
+│   │   ├── Dashboard.tsx                       # Analytics dashboard
+│   │   ├── Assets.tsx                          # Asset management UI
+│   │   ├── CreateAsset.tsx                     # Asset creation form
+│   │   └── Analytics.tsx                       # Analytics visualization
+│   ├── src/lib/api.ts                          # API integration
+│   └── package.json
+│
+└── genminds-backend/                           # Backend API (Node.js/Express)
+    ├── server.js                               # Express server
+    ├── app.yaml                                # App Engine config
+    └── package.json
+```
 
-### API Endpoints
-- `GET /api/assets` - List assets
-- `POST /api/assets` - Create asset
-- `GET /api/assets/:id` - Get asset
+## Technology Stack
+
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **Backend**: Node.js, Express
+- **AI/ML**: Google Gemini API (embeddings, semantic search)
+- **Database**: Google Firestore
+- **Analytics**: Google BigQuery
+- **Deployment**: Google App Engine
+- **Version Control**: Git/GitHub
+
+## API Endpoints for Intelligence Asset Management
+
+### Asset CRUD Operations
+- `GET /api/assets` - List all intelligence assets
+- `POST /api/assets` - Create new intelligence asset
+- `GET /api/assets/:id` - Get specific asset details
 - `PUT /api/assets/:id` - Update asset
 - `DELETE /api/assets/:id` - Delete asset
-- `POST /api/search` - Semantic search
-- `POST /api/assets/:id/evaluate` - Evaluate asset
-- `GET /api/analytics/dashboard` - Dashboard metrics
 
-### Data Models
+### AI-Powered Search
+- `POST /api/search` - Semantic search using Gemini embeddings
+
+### Asset Evaluation
+- `POST /api/assets/:id/evaluate` - Evaluate asset quality and relevance
+
+### Analytics
+- `GET /api/analytics` - Get asset analytics and metrics
+
+## Live Deployment
+
+- **Frontend**: https://trans-proposal-441718-c9.ew.r.appspot.com
+- **Backend API**: https://api-backend-dot-trans-proposal-441718-c9.ew.r.appspot.com
+
+## Key Features
+
+1. **Intelligence Asset Management** - Comprehensive CRUD for managing AI assets
+2. **Semantic Search** - AI-powered search using Gemini embeddings
+3. **Versioning** - Track changes and versions of assets
+4. **Evaluation** - Quality scoring and relevance evaluation
+5. **Analytics** - Real-time usage tracking and metrics
+6. **Licensing** - Asset licensing and rights management
+
+## Installation & Development
+```bash
+# Clone repository
+git clone https://github.com/Miles-Bruce/GenMinds-B-Bm.git
+cd GenMinds-B-Bm
+
+# Backend setup
+cd genminds-backend
+npm install
+npm run dev
+
+# Frontend setup (new terminal)
+cd GenMinds-B-Bm
+npm install
+npm run dev
 ```
-Asset: {
-  id, title, description, category, tags, source, 
-  riskLevel, evaluationScore, createdAt, updatedAt, embedding
-}
 
-Event: {
-  id, timestamp, eventType, assetId, metadata
+## Data Models
+
+### Intelligence Asset Schema
+```json
+{
+  "id": "string",
+  "title": "string",
+  "description": "string",
+  "category": "prompt|template|workflow|persona",
+  "tags": ["string"],
+  "source": "string",
+  "riskLevel": "low|medium|high",
+  "evaluationScore": "number",
+  "version": "number",
+  "license": "string",
+  "createdAt": "timestamp",
+  "updatedAt": "timestamp",
+  "embedding": ["number"]
 }
 ```
 
-### Deployment
-- **Frontend:** https://trans-proposal-441718-c9.ew.r.appspot.com
-- **Backend API:** https://api-backend-dot-trans-proposal-441718-c9.ew.r.appspot.com
-- **Project ID:** trans-proposal-441718-c9
+## Status
 
-### Security
-- Service account authentication
-- CORS enabled
-- Firestore security rules
-- Environment-based API keys
+**Version**: 1.0.0 (Production Ready)
 
-### Development Setup
-1. Clone: `git clone https://github.com/Miles-Bruce/GenMinds-B-Bm.git`
-2. Backend: `cd genminds-backend && npm install && npm run dev`
-3. Frontend: `cd GenMinds-B-Bm && npm install && npm run dev`
-
-### Status
-- ✅ Core asset management
-- ✅ Semantic search with embeddings
-- ✅ Analytics logging
+- ✅ Intelligence asset CRUD operations
+- ✅ AI-powered semantic search with Gemini
+- ✅ Asset evaluation system
+- ✅ Versioning and change tracking
+- ✅ Analytics dashboard
 - ✅ Cloud deployment
-- 🔄 Firebase Authentication (in progress)
+- 🔄 Advanced licensing features (planned)
+
+## License
+
+Proprietary - All rights reserved
+
+## Repository
+
+https://github.com/Miles-Bruce/GenMinds-B-Bm
