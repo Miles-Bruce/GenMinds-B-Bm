@@ -1,9 +1,16 @@
 runtime: nodejs20
 
 handlers:
+# Serve static files
+- url: /assets/(.*)
+  static_files: build/assets/\1
+  upload: build/assets/(.*)
+
+- url: /favicon.ico
+  static_files: build/favicon.ico
+  upload: build/favicon.ico
+
+# Serve index.html for all other routes (SPA routing)
 - url: /.*
   static_files: build/index.html
   upload: build/index.html
-- url: /(.*)
-  static_files: build/\1
-  upload: build/(.*)
