@@ -1,21 +1,30 @@
+/**
+ * GenMinds - Enterprise Intelligence Asset Management Platform
+ * Benchmarks: AI model performance evaluation and comparison  
+ * Compare GPT-4, Claude, Gemini on intelligence assets
+ */
+
 import DashboardLayout from "@/components/DashboardLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp } from "lucide-react";
 
 export default function Benchmarks() {
   const models = [
-    { name: "GPT-4", score: 92, tests: 1234 },
-    { name: "Claude 3 Opus", score: 88, tests: 1089 },
-    { name: "Gemini Pro", score: 84, tests: 956 },
-    { name: "GPT-3.5", score: 78, tests: 2341 },
+    { name: "GPT-4 (Intelligence Assets)", score: 92, tests: 1234 },
+    { name: "Claude 3 Opus (Intelligence Assets)", score: 88, tests: 1089 },
+    { name: "Gemini Pro (Intelligence Assets)", score: 84, tests: 956 },
+    { name: "GPT-3.5 (Intelligence Assets)", score: 78, tests: 2341 },
   ];
 
   return (
-    <DashboardLayout title="Benchmarks">
+    <DashboardLayout title="AI Model Benchmarks" subtitle="Evaluate AI model performance on GenMinds intelligence assets">
       <div className="space-y-6">
         <Card>
           <CardHeader>
-            <CardTitle>Model Performance Comparison</CardTitle>
+            <CardTitle>Intelligence Asset Model Performance</CardTitle>
+            <p className="text-xs text-muted-foreground mt-1">
+              Compare AI model performance across GenMinds intelligence assets
+            </p>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -47,12 +56,12 @@ export default function Benchmarks() {
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <TrendingUp className="h-5 w-5 text-accent" />
-              Performance Trends
+              Intelligence Asset Performance Trends
             </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground">
-              Historical benchmark data and performance trends will appear here.
+              Historical benchmark data for GenMinds intelligence assets and AI model performance trends.
             </p>
           </CardContent>
         </Card>

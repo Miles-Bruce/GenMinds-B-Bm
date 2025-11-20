@@ -1,3 +1,9 @@
+/**
+ * GenMinds - Enterprise Intelligence Asset Management Platform  
+ * Portfolios: Manage collections of intelligence assets
+ * Create and license portfolios of AI intelligence assets
+ */
+
 import DashboardLayout from "@/components/DashboardLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,21 +14,21 @@ export default function Portfolios() {
   const portfolios = [
     {
       id: "1",
-      title: "Enterprise Support Suite",
+      title: "Enterprise Support Intelligence Suite",
       owner: "Sarah Chen",
       assets: 12,
       license: "Enterprise",
     },
     {
       id: "2",
-      title: "Marketing Automation Pack",
+      title: "Marketing AI Intelligence Pack",
       owner: "Mike Johnson",
       assets: 8,
       license: "Paid",
     },
     {
       id: "3",
-      title: "Developer Tools Collection",
+      title: "Developer Intelligence Tools Collection",
       owner: "Alex Kim",
       assets: 15,
       license: "Open",
@@ -31,7 +37,8 @@ export default function Portfolios() {
 
   return (
     <DashboardLayout
-      title="Portfolios"
+      title="Asset Portfolios"
+      subtitle="Manage collections of GenMinds intelligence assets"
       actions={
         <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">
           <Plus className="mr-2 h-4 w-4" />
@@ -54,7 +61,7 @@ export default function Portfolios() {
             <CardContent>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">{portfolio.owner}</span>
-                <span className="font-medium">{portfolio.assets} assets</span>
+                <span className="font-medium">{portfolio.assets} intelligence assets</span>
               </div>
             </CardContent>
           </Card>

@@ -1,3 +1,9 @@
+/**
+ * GenMinds - Enterprise Intelligence Asset Management Platform
+ * Personas: AI personas for various enterprise use cases
+ * Create and manage intelligent AI agent personas
+ */
+
 import DashboardLayout from "@/components/DashboardLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -5,13 +11,13 @@ import { User } from "lucide-react";
 
 export default function Personas() {
   const personas = [
-    { name: "Customer Support Specialist", industry: "Support", score: 92 },
-    { name: "Marketing Content Writer", industry: "Marketing", score: 88 },
-    { name: "Technical Documentation Expert", industry: "DevTools", score: 90 },
+    { name: "Customer Support Intelligence Specialist", industry: "Support", score: 92 },
+    { name: "Marketing Intelligence Content Writer", industry: "Marketing", score: 88 },
+    { name: "Technical Intelligence Documentation Expert", industry: "DevTools", score: 90 },
   ];
 
   return (
-    <DashboardLayout title="AI Personas">
+    <DashboardLayout title="AI Intelligence Personas" subtitle="Manage AI personas for GenMinds intelligence assets">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {personas.map((persona, i) => (
           <Card key={i} className="hover:border-accent transition-colors cursor-pointer">

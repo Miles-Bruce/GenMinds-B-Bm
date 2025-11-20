@@ -1,3 +1,9 @@
+/**
+ * GenMinds - Enterprise Intelligence Asset Management Platform
+ * CreateAsset: Form for creating new AI intelligence assets
+ * Supports prompts, personas, workflows, and blueprints
+ */
+
 import { useState } from "react";
 import DashboardLayout from "@/components/DashboardLayout";
 import { Button } from "@/components/ui/button";
@@ -24,7 +30,7 @@ export default function CreateAsset() {
   });
 
   return (
-    <DashboardLayout title="Create New Asset">
+    <DashboardLayout title="Create Intelligence Asset" subtitle="Add a new AI intelligence asset to GenMinds platform">
       <Card className="max-w-4xl">
         <CardContent className="pt-6">
           <form className="space-y-8">
@@ -33,10 +39,10 @@ export default function CreateAsset() {
               <h3 className="text-lg font-semibold">Basic Information</h3>
               
               <div className="space-y-2">
-                <Label htmlFor="name">Asset Title *</Label>
+                <Label htmlFor="name">Intelligence Asset Title *</Label>
                 <Input
                   id="name"
-                  placeholder="e.g., Customer Support AI Persona"
+                  placeholder="e.g., Customer Support AI Intelligence Persona"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
