@@ -1,0 +1,14 @@
+GENMINDS - ENTERPRISE INTELLIGENCE ASSET MANAGEMENT PLATFORM
+
+Project Name: GenMinds
+Full Description: Enterprise Intelligence Asset Management Platform for discovering, evaluating, and managing AI intelligence assets
+
+Repository Purpose:
+This is the official GenMinds project repository containing:
+- Frontend React application for intelligence asset management
+- Backend Node.js/Express API
+- Complete GenMinds platform implementation
+
+Live Deployment: https://trans-proposal-441718-c9.ew.r.appspot.com
+
+This repository IS the GenMinds project.
