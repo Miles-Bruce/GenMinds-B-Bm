@@ -1,3 +1,9 @@
+/**
+ * GenMinds - Enterprise Intelligence Asset Management Platform
+ * DashboardLayout: Main navigation and layout component
+ * Provides sidebar navigation for intelligence asset management features
+ */
+
 import { Link, useLocation } from "react-router-dom";
 import { 
   LayoutDashboard, 
@@ -12,16 +18,17 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Navigation routes for GenMinds Intelligence Asset Management Platform
 const navigation = [
-  { label: "Dashboard", route: "/dashboard", icon: LayoutDashboard },
-  { label: "Assets", route: "/assets", icon: Layers },
-  { label: "Portfolios", route: "/portfolios", icon: Briefcase },
-  { label: "Benchmarks", route: "/benchmarks", icon: TrendingUp },
-  { label: "AI Personas", route: "/personas", icon: Users },
-  { label: "Licensing", route: "/licensing", icon: FileText },
-  { label: "Workspaces", route: "/workspaces", icon: Folders },
-  { label: "Analytics", route: "/analytics", icon: BarChart3 },
-  { label: "Settings", route: "/settings", icon: Settings },
+  { label: "Dashboard", route: "/dashboard", icon: LayoutDashboard, description: "Intelligence Asset Overview" },
+  { label: "Intelligence Assets", route: "/assets", icon: Layers, description: "Manage AI Assets" },
+  { label: "Portfolios", route: "/portfolios", icon: Briefcase, description: "Asset Collections" },
+  { label: "Benchmarks", route: "/benchmarks", icon: TrendingUp, description: "AI Model Performance" },
+  { label: "AI Personas", route: "/personas", icon: Users, description: "Intelligent Agents" },
+  { label: "Licensing", route: "/licensing", icon: FileText, description: "Asset Licensing" },
+  { label: "Workspaces", route: "/workspaces", icon: Folders, description: "Team Collaboration" },
+  { label: "Analytics", route: "/analytics", icon: BarChart3, description: "Usage Analytics" },
+  { label: "Settings", route: "/settings", icon: Settings, description: "Platform Settings" },
 ];
 
 interface DashboardLayoutProps {
@@ -36,11 +43,12 @@ export default function DashboardLayout({ children, title, subtitle, actions }: 
 
   return (
     <div className="flex h-screen bg-background">
-      {/* Sidebar */}
+      {/* Sidebar - GenMinds Intelligence Asset Management */}
       <aside className="w-64 bg-[hsl(var(--sidebar-background))] text-[hsl(var(--sidebar-foreground))] flex flex-col">
         <div className="p-6 border-b border-white/10">
           <h1 className="text-2xl font-bold">GenMinds</h1>
-          <p className="text-xs text-white/70 mt-1">Enterprise Intelligence Platform</p>
+          <p className="text-xs text-white/70 mt-1">Intelligence Asset Management</p>
+          <p className="text-[10px] text-white/50 mt-0.5">Enterprise AI Platform</p>
         </div>
 
         <nav className="flex-1 p-4 space-y-1">
